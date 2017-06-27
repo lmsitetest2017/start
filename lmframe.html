@@ -28,6 +28,8 @@ function start() {
     document.head.appendChild(script);
 }
 
+var subscribed = false;
+
 function loaded() {
     //Connection to the catalog
     console.log("loaded");
@@ -35,29 +37,33 @@ function loaded() {
     catalog.connect(
       {
           "scope": window,
-          fn: subscribeToEvents22,
+          fn: subscribeToEvents,
 		  onSuccess: function () {},
 		  onError: function () {}
       }
     );
 }
 
-function subscribeToEvents22() {
+function subscribeToEvents() {
     //Event subscription
     console.log("subscribeToEvents");
 
-    catalog.subscribe(
-      "commandpage.notifyResponse",
-      {
-          fn: notifyResponse22,
-          scope: window,
-		  onSuccess: function () {},
-		  onError: function () {}
-      }
-    );
+	if (!subscribed) {
+		subscribed = true;
+		catalog.subscribe(
+		  "commandpage.notifyResponse",
+		  {
+			  fn: notifyResponse,
+			  scope: window,
+			  onSuccess: function () {},
+			  onError: function () {}
+		  }
+		);
+	}
 }
 
-function notifyResponse22 (data, cbData) { 
+
+function notifyResponse (data, cbData) { 
 
 }
 </script>
