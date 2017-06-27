@@ -40,7 +40,13 @@ function subscribeToEvents() {
     //Event subscription
     console.log("connected");
 
-    
+    catalog.subscribe(
+      "commandpage.notifyResponse",
+      {
+          fn: function (data, cbData) { },
+          scope: ghost
+      }
+    );
 }
 </script>
 </head>
