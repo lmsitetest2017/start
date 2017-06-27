@@ -35,7 +35,9 @@ function loaded() {
     catalog.connect(
       {
           "scope": window,
-          fn: subscribeToEvents22
+          fn: subscribeToEvents22,
+		  onSuccess: function () {},
+		  onError: function () {}
       }
     );
 }
@@ -48,7 +50,9 @@ function subscribeToEvents22() {
       "commandpage.notifyResponse",
       {
           fn: notifyResponse22,
-          scope: window
+          scope: window,
+		  onSuccess: function () {},
+		  onError: function () {}
       }
     );
 }
