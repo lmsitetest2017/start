@@ -35,22 +35,26 @@ function loaded() {
     catalog.connect(
       {
           "scope": window,
-          fn: subscribeToEvents
+          fn: subscribeToEvents22
       }
     );
 }
 
-function subscribeToEvents() {
+function subscribeToEvents22() {
     //Event subscription
     console.log("subscribeToEvents");
 
     catalog.subscribe(
       "commandpage.notifyResponse",
       {
-          fn: function (data, cbData) { },
+          fn: notifyResponse22,
           scope: window
       }
     );
+}
+
+function notifyResponse22 (data, cbData) { 
+
 }
 </script>
 </head>
