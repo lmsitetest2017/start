@@ -44,7 +44,13 @@ function subscribeToEvents() {
     //Event subscription
     console.log("subscribeToEvents");
 
-    
+    catalog.subscribe(
+      "commandpage.notifyResponse",
+      {
+          fn: function (data, cbData) { },
+          scope: window
+      }
+    );
 }
 </script>
 </head>
