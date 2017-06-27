@@ -47,7 +47,7 @@ function subscribeToEvents() {
     catalog.subscribe(
       "commandpage.notifyResponse",
       {
-          fn: function (data, cbData) {console.log("notifyResponse"); },
+          fn: function (data, cbData) {alert("w"); },
           scope: window
       }
     );
