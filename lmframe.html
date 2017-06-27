@@ -44,7 +44,7 @@ function subscribeToEvents() {
       "commandpage.notifyResponse",
       {
           fn: function (data, cbData) {console.log(JSON.stringify(data, null, 2)); },
-          scope: ghost
+          scope: window
       }
     );
 }
