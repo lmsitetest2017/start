@@ -16,8 +16,8 @@ function start() {
     }
     fileName += "?version=" + EXTERNAL_CATALOG_VERSION;
     // Build script URL
-    //var startURL = document.referrer.replace("https://", "").split("/")[0];
-    var startURL = document.location.href.replace("https://", "").split("/")[0];
+    var startURL = document.referrer.replace("https://", "").split("/")[0];
+    //var startURL = document.location.href.replace("https://", "").split("/")[0];
     console.log("url: " + startURL);
     script.src = "https://" + startURL + "/" + fileName;
     script.onload = loaded;
